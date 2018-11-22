@@ -1,11 +1,12 @@
 package dk.cphbusiness.regular.automaton;
 
-import java.util.Set;
+import java.util.List;
 
 public interface Automaton {
   Alphabet getAlphabet();
-  Set<State> getStates();
-  Set getInitialState();
-  Set<State> getFinalStates();
+  List<State> getStates();
+  State getInitialState();
+  // Dependent of impl.
+  // Set<State> getFinalStates();
   State nextState(State state, char symbol);
   }
