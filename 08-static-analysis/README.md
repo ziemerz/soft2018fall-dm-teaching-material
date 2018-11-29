@@ -52,12 +52,12 @@ but are not used in this assignment.
 * Create an abstract syntax tree for the following `VSSL`-code:
 
 ```
-DEF X: Integer
-IF (Y < 10) {
+DEF X: INTEGER
+IF Y < 10 THEN {
     LET X = 100
     }
 LET Y = Y + 10
-IF (Y >= 20) {
+IF Y >= 20 THEN {
     LET X = 4711
     }
 ```
