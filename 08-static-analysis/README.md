@@ -64,3 +64,6 @@ IF Y >= 20 THEN {
 
 * Create classes to support variable value ranges and computer states
 * Implement methods to make static analysis
+
+### History
+2018-12-02 Added a Program class as AST root

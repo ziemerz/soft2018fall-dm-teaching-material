@@ -55,7 +55,7 @@ class AssignmentStatement(
     override fun toString() = "LET $name = $value\n"
     }
 
-class Block(vararg val statements: Statement) : Statement {
+open class Block(vararg val statements: Statement) : Statement {
     override fun analyse(precondition: State): State {
         TODO("not implemented")
         }
@@ -77,9 +77,9 @@ class IfStatement(
         }
 
     override fun toString() = """
-IF $predicate THEN
-$thenBlock
-""".trimIndent()
+        |IF $predicate THEN
+        |$thenBlock
+        """.trimMargin()
     }
 
 class IfElseStatement(
@@ -90,4 +90,14 @@ class IfElseStatement(
     override fun analyse(precondition: State): State {
         TODO("not implemented")
         }
+    }
+
+/**
+ * Extends Block, by overriding toString with out the { }'s
+ */
+class Program (vararg statements: Statement) : Block(* statements) {
+
+    override fun toString() =
+        statements.joinToString(separator = "\n")
+
     }

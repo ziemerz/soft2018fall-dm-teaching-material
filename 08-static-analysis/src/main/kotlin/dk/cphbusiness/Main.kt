@@ -24,12 +24,13 @@ fun firstTest() {
     }
 
 fun main(args: Array<String>) {
-    val ast = Block(
+    val ast = Program(
         DefinitionStatement("X"),
         IfStatement(
             LessThanExpression(Variable("Y"), Constant(10)),
             Block(AssignmentStatement("X", Constant(100)))
-        ))
+            )
+        )
     println(ast)
     val pre = MappedState() // some more
     val post = ast.analyse(pre)
