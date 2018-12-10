@@ -24,17 +24,28 @@ fun firstTest() {
     }
 
 fun main(args: Array<String>) {
-    val ast = Program(
-        DefinitionStatement("X"),
-        IfStatement(
-            LessThanExpression(Variable("Y"), Constant(10)),
-            Block(AssignmentStatement("X", Constant(100)))
-            )
-        )
-    println(ast)
-    val pre = MappedState() // some more
-    val post = ast.analyse(pre)
-    val expected = MappedState() // some more
+    firstTest()
+//    val ast = Program(
+//        DefinitionStatement("X"),
+//        IfStatement(
+//            LessThanExpression(Variable("Y"), Constant(10)),
+//            Block(AssignmentStatement("X", Constant(100)))
+//            ),
+//        AssignmentStatement("Y",
+//            PlusExpression(Variable("Y"), Constant(10))),
+//        IfStatement(
+//            GreaterThanOrEqualsToExpression(Variable("Y"), Constant(20)),
+//            Block(AssignmentStatement("X", Constant(4711)))
+//        )
+//        )
+//    println(ast)
+//    val pre = MappedState() // some more
+//    println(pre)
+//    val post = ast.analyse(pre)
+//    val expected = MappedState() // some more
+//
+//    println(post)
+//    println(expected)
 
     //post.partiallyLesserThan(expected)
     }
