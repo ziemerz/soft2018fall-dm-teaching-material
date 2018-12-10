@@ -25,7 +25,7 @@ class MappedState : State {
 
 class UnionState(val first: State, val second: State) : State {
     override fun get(name: String): Range? {
-        TODO("not implemented")
+        return first.get(name)!!.plus(second.get(name)!!)
     }
 
     override fun set(name: String, range: Range) {
